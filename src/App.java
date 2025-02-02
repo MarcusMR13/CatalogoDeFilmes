@@ -1,34 +1,20 @@
-import javax.print.attribute.standard.JobHoldUntil;
-import javax.swing.JOptionPane;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
-        System.out.println("Esse é o Screen Match");
+        Scanner input = new Scanner(System.in);
 
-        String nomeFilme = "Wall-e";
-        int anoLancamento = 2001;
-        double notaDoFilme = 4.49;
-        boolean isBom;
-
-        System.out.println(String.format("Nome: %s,\nAno de Lançamento: %d,\nNota: %.2f", nomeFilme, anoLancamento,
-                notaDoFilme));
-
-        System.out.println(String.format((notaDoFilme >= 4.50)
-                ? "O Filme: %s é bom"
-                : "O Filme: %s é ruim", nomeFilme,
-                nomeFilme));
+        Movie movie1 = new Movie();
+        movie1.name = "Marcus Marques";
+        movie1.releaseDate = "25/09/2001";
 
         
-            
-        /*
-         * if (notaDoFilme >= 4.50) {
-         * isBom = true;
-         * System.out.println("O Filme: Velozes e Furiosos é bom?" + isBom);
-         * }else {
-         * isBom = false;
-         * System.out.println("O Filme: Velozes e Furiosos é bom?" + isBom);
-         * }
-         */
+        movie1.rate(2);
+        movie1.rate(6);
+        movie1.rate(2);
+
+        movie1.showInfo();
+        System.out.println("Rate Number: " + movie1.getNumberOfRatings());
     }
 }
